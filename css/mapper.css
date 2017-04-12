@@ -1,0 +1,131 @@
+#page_wrap {
+	/*background-image: url(../img/nyfun.png);
+    background-attachment: fixed;*/
+}
+
+#left_buffer #right_buffer{
+}
+
+.fc-prof-pic {
+    background-image: url(../img/profile-05.png);   
+    height: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.fc-overflow-hidden {
+    overflow: hidden;
+}
+
+.fc-vert-align-middle {
+    vertical-align: middle;
+}
+
+.fc-vert-align-right {
+    vertical-align: right;
+}
+
+.fc-top-padded {
+    padding-top: 20px;
+}
+
+.fc-center-align {
+    text-align: center;
+}
+
+.fc-bg-1 {
+    background-color: white;
+}
+
+.fc-bg-2 {
+    background-image: url(../img/timessquare1x.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.fc-bg-3 {
+    background-color: rgb(0, 102, 0);
+    color: white;
+}
+
+.fc-bg-4 {
+    background-color: #222;
+    color: white;
+}
+
+.fc-bg-5 {
+    background-image: url(../img/implem-headers.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.fc-text-2 {
+    color: white;
+}
+
+a.fc-tip-3 {
+    color: #222;
+}
+
+.fc-hero-overlay {
+    background-color: #222;
+    color: white;
+    opacity: 0.97}
+
+.fc-img-resp {
+    max-width: 100%;
+    height: auto;
+}
+
+.fc-onview-fadein {
+}
+
+.fc-hidden{
+     opacity:0;
+}
+.fc-visible{
+     opacity:1;
+}
+
+.img-center {
+    margin: 0 auto;
+}
+
+.fc-always-hide {
+    display: none;
+}
+
+.fc-width-100 {
+    width: 100%;
+}
+
+
+@media(min-width:768px) {
+    #main {
+        padding-top: 80px;
+    }
+    .hero-right {
+        padding-left: 30px;
+    }
+    .fc-row-reverse {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+}
+
+@media(max-width:767px) {
+    #main {
+    	margin-top: 80px;
+    }
+    body {
+    	margin-top:0px;
+    }
+    .fc-row-reverse {
+        flex-direction: row;
+    }
+
+    .fc-mobile-hide {
+        display: none;
+    }
+}

@@ -24,8 +24,7 @@ var input = document.getElementById('fc-search-bar');
 		var input = document.getElementById('fc-search-bar');
 		var options = {
 			types: 'establishment',
-			bounds: '40.748N,73.9857W',	//biases Empire State Building
-			placeIdOnly: ''
+			bounds: '40.748N, 73.9857W'	//biases Empire State Building
 		}
 		autocomplete = new google.maps.places.Autocomplete(input,options);
 		autocomplete.addListener('place_changed',printy);

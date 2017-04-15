@@ -4,7 +4,7 @@ require_once('TwitterAPIExchange.php');
 
 /** Set access tokens here - see: https://dev.twitter.com/apps/ **/
 
-require 'config.php';
+require '../config.php';
 
 /*
 $settings = array(

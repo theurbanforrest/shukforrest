@@ -37,7 +37,7 @@ var input = document.getElementById('fc-search-bar');
 		console.log('place_changed was fired');
 	}
 
-	$('.btn').click( function(){
+	$('#pullResults').click( function(){
 		/*Clear Results*/
 		$('.fc-results').html('');
 
@@ -47,15 +47,14 @@ var input = document.getElementById('fc-search-bar');
 		console.log('got the picture' + thepic);
 
 		$('.fc-results').prepend(thepic);
+		console.log('prepended the pic');
 
 
     });
 
-	/*Preventing Google Autocomplete form submits*/
-
-    function preventDisFaka(evt) {
-  		evt.preventDefault();
-  		someBug();
-  		return false;
-	}
+	$('#clearResults').click( function(){
+		/*Clear Results*/
+		$('fc-results').replaceWith('');
+		console.log('fc-results cleared');
+	})
 

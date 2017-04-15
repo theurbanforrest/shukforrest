@@ -63,7 +63,8 @@
         <!--end left_buffer-->
 
         <!--start main-->
-        <div id="main" class="col-xs-12 col-sm-10 col-md-8 col-lg-8">
+        <div id="main" class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            
             <div class="col-xs-12 col-sm-12 fc-bg-1 fc-center-align">
                 <h1>Hi boo!</h1>
             </div>
@@ -75,17 +76,16 @@
                     </div>
                     <!--end panel-heading-->
                     <div class="panel-body">
-                            <form class="form" onsubmit="return false">
-                                <div class="col-xs-12 col-sm-12">
-                                    <div class="input-group fc-width-100">
-                                        <input type="text" class="form-control" id="fc-search-bar" placeholder="Search for spots..">
-                                    </div>
+                        <form class="form" onsubmit="return false">
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="input-group fc-width-100">
+                                    <input type="text" class="form-control" id="fc-search-bar" placeholder="Search for spots..">
                                 </div>
-                                <div class="col-xs-12 col-sm-12 fc-top-padded">
-                                    <button type="button" class="btn btn-primary">Submit</button>
-                                </div>
-                            </form>
-                        </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 fc-top-padded">
+                                <button type="button" class="btn btn-primary" id="fc-google-search">Googoru</button>
+                            </div>
+                        </form>
                     </div>
                     <!--end panel-body-->
                 </div>
@@ -105,23 +105,36 @@
                     </div>
                 </div>
                 <!--end panel-->
+            </div>
+            <!--end col-->
 
-                <div class="col-xs-12 col-sm-12 fc-bg-1 fc-center-align">
+            <div class="col-xs-12 col-sm-12 fc-bg-1 fc-center-align">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                            #portfolioModal1 below
+                        #portfolioModal1 below
                     </div>
                     <!--end panel-heading-->
-                    
                     <div class="panel-body">
                         <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        Test Me!
+                            Test Me!
                         </a>
-                        </div>
                     </div>
                 </div>
-                <!--end panel-->
+            </div>
+            <!--end panel-->
 
+            <div class="col-xs-12 col-sm-12 fc-bg-1 fc-center-align">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Hit dem Tweets
+                    </div>
+                    <!--end panel-heading-->
+                    <div class="panel-body">
+                        <button type="button" class="btn btn-primary" id="fc-twitter-api">Twitteru</button>
+                    </div>
+                    <!--end panel-body-->
+                </div>
+                <!--end panel-->
             </div>
             <!--end col-->
 
@@ -281,7 +294,6 @@
                 <!--end modal-content-->
             </div>
             <!--end portfolio-modal-->
-
         </div>
         <!--main-->
 
@@ -303,31 +315,6 @@
     <script>
         google.maps.event.addDomListener(window, 'load', init);
 
-    </script>
-    
-    <!--<script>
-        $('.btn').click( function(){
-
-            $.ajax({
-                url: 'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=brookfie&types=establishment&key=AIzaSyBIWeXRGZQrrQbp8RFZQZ2W9pFNkkWhvRM&radius=2000&strictbounds&location=40.7484N,73.9857W',
-                type: 'GET',
-                dataType: 'jsonp',
-                headers: {
-                    //WRITE IF THEIR HAVE SOME HEADER REQUEST OR DATA
-                },
-                crossDomain: true,
-                success: function (data, textStatus, xhr) {
-                    console.log(data);
-                },
-                error: function (xhr, textStatus, errorThrown) {
-                    console.log(errorThrown);
-                }
-            });
-        });
-    </script>-->
-
-            
-
-        
+    </script>    
 
 </body>

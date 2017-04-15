@@ -19,6 +19,7 @@ var input = document.getElementById('fc-search-bar');
 
 	var currentPlace;
 	var currentPlaceDetails;
+	var twitterApiResponse;
 
 	function init() {
 		var input = document.getElementById('fc-search-bar');
@@ -36,7 +37,7 @@ var input = document.getElementById('fc-search-bar');
 		console.log('place_changed was fired');
 	}
 
-	$('.btn').click( function(){
+	$('#fc-google-search').click( function(){
 		/*Clear Results*/
 		$('.fc-results').html('');
 
@@ -46,15 +47,5 @@ var input = document.getElementById('fc-search-bar');
 		console.log('got the picture' + thepic);
 
 		$('.fc-results').prepend(thepic);
-
-
     });
-
-	/*Preventing Google Autocomplete form submits*/
-
-    function preventDisFaka(evt) {
-  		evt.preventDefault();
-  		someBug();
-  		return false;
-	}
 

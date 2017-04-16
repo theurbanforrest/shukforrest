@@ -69,6 +69,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIWeXRGZQrrQbp8RFZQZ2W9pF
                 console.log('attempt to clear #fc-textarea');
                         document.getElementById('fc-textarea').value = "";
 
-console.log('fc-clear-this.click() complete');
-                return true;
+                console.log('fc-clear-this.click() complete');
+                    window.location.reload();
+                    return true;
         });

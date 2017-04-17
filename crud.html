@@ -1,0 +1,138 @@
+
+
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="#">
+    <meta name="author" content="#">
+    <meta name="keywords" content="#">
+
+    <meta property="og:title" content="#">
+    <meta property="og:description" content="#">
+    <meta property="og:url" content="#">
+    <meta property="og:image" content="#"/>
+
+    <title>#shukforrestadventuretime</title>
+
+    <!--Global CSS-->
+        <link href="css/paintstrap.min.css" rel="stylesheet">
+        <link href="css/forrest.css" rel="stylesheet">
+        <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">   
+        <link href="css/animate.css" rel="stylesheet"> 
+
+    <!-- Global JS -->
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+    <!--Page CSS-->
+
+</head>
+
+<body>
+
+       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><i class="fa fa-fw fa-heart-o"></i> #shukforrestadventuretime</a>
+            </div>
+            
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav top-nav">
+                    <li>
+                        <a href="#" class="fc-get-users"><i class="fa fa-fw fa-users"></i> Feed</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+    <div id="page_wrap" class="container-fluid">
+        <!--start left_buffer-->
+        <div id="left_buffer" class="col-xs-0 col-sm-1 col-md-2 col-lg-2">
+        </div>
+        <!--end left_buffer-->
+
+        <!--start main-->
+        <div id="main" class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            <div id="header">
+                <div id="content">
+                    <label>CRUD Operations With PHP and MySql - By Cleartuts</label>
+                </div>
+            </div>
+            <div id="body">
+                <div id="content">
+                    <form method="post" onsubmit="return false">
+                        <table align="center">
+                        <tr>
+                        <td align="center"><a href="index.php">back to main page</a></td>
+                        </tr>
+                        <tr>
+                        <td><input id="fc-first" type="text" name="first_name" placeholder="First Name" required /></td>
+                        </tr>
+                        <tr>
+                        <td><input id="fc-second" type="text" name="last_name" placeholder="Last Name" required /></td>
+                        </tr>
+                        <tr>
+                        <td><input id="fc-third" type="text" name="user_city" placeholder="City" required /></td>
+                        </tr>
+                        <tr>
+                        <td><button type="submit" name="btn-save" id="fc-crud-create"><strong>SAVE</strong></button></td>
+                        </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--main-->
+
+        <!--start right_buffer-->
+        <div id="right_buffer" class="col-xs-0 col-sm-1 col-md-2 col-lg-2">
+        </div>
+        <!--end right_buffer-->
+    </div>
+    <!--/end container-fluid-->
+
+    <footer class="fc-center-align fc-text-2">
+        <h3>This is the footer</h3>
+    </footer>
+
+    <!--Bootstrapping other JS'-->
+    <script>
+    $('#fc-crud-create').click( function() {
+
+    if(!document.getElementById('fc-first').value || document.getElementById('fc-second').value || document.getElementById('fc-third').value){
+
+        alert('fields required');
+        return false;
+    }
+
+        $.ajax({
+            type: 'POST',
+            url: 'crud/create.php',
+            data: {
+                'first_name' : document.getElementById('fc-first').value,
+                'last_name' : document.getElementById('fc-second').value,
+                'user_city' : document.getElementById('fc-third').value,
+            }
+        }).done( function(){
+            console.log('ajax done');
+            alert('mysql submitted');
+            window.location.reload();
+        });
+    });
+    
+    </script>
+       
+
+</body>

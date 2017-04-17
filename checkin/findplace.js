@@ -56,6 +56,9 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIWeXRGZQrrQbp8RFZQZ2W9pF
                                 $('#fc-addpic-panel').removeClass('fc-hidden');
                         console.log('updatePlace() complete');
 
+                                $('.fc-clear-this').removeClass('fc-hidden');
+                        console.log('.fc-clear-this removed fc-hidden');
+
                 }
 
         //Clear the text field

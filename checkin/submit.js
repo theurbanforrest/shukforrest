@@ -10,12 +10,15 @@ var currentPlace;
 */
 
 //On Click to Submit
-        qq(document.getElementById("fc-try-uploader")).attach('click', function() {
-                
-                console.log('submit - upload the pic');
-                uploader.uploadStoredFiles();
 
-                //See FineUploader onComplete callback for the rest of the submission
+		/*global var*/
+		var didItWork;
 
-        });
+		$('#fc-try-uploader').click( function(){
+			//Run the uploader, onAllComplete within this function handles the storing of data/
+			//Sets var didItWork to true if successful
+            uploader.uploadStoredFiles();
 
+            
+
+		});

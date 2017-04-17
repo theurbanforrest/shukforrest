@@ -41,6 +41,8 @@ $uploader->allowedExtensions = array(); // all files types allowed by default
 $uploader->sizeLimit = null;
 
 // Specify the input name set in the javascript.
+
+/**CHANGED THIS - to always be 'image.jpg' from qqfile**/
 $uploader->inputName = "qqfile"; // matches Fine Uploader's default inputName value by default
 
 // If you want to use the chunking/resume feature, specify the folder to temporarily save parts.

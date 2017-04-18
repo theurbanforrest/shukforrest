@@ -28,6 +28,10 @@ var currentPlace;
 				return false;
 			}
 
+			//There are originally three images: 0= medium, 1= large, 2=original (usually ridiculously large)
+			//Don't upload original to server to save disk space
+			uploader.cancel(2);
+
 			//Run the uploader, onAllComplete within this function handles the storing of data/
 			//Sets var didItWork to true if successful
             uploader.uploadStoredFiles();

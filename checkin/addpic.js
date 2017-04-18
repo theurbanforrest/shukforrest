@@ -30,8 +30,8 @@ var uploader = new qq.FineUploader({
         },
         scaling: {
                 sizes: [
-                        {name: "medium", maxSize: 300},
-                        {name: "large", maxSize: 800}
+                        {name: "medium", maxSize: 400},
+                        {name: "large", maxSize: 1200}
                 ]
         },
         success: {
@@ -91,21 +91,29 @@ var uploader = new qq.FineUploader({
                         console.log('submit - send the data');
 
                         for(var i=0;i<pic_object.length;i++) {
-                                $.ajax({
-                                        type: 'POST',
-                                        url: 'checkin/submit.php',
-                                        data: {
-                                                'timestamp' : timestamp,
-                                                'pic_batchId' : pic_batchId,
-                                                'pic_UUID' : pic_UUID,
-                                                'pic_name' : pic_name,
-                                                'place_google_id' : place_google_id,
-                                                'place_google_name' : place_google_name,
-                                                'blurb' : blurb
-                                        }
-                                }).done( function(){
-                                        console.log('ajax done');
-                                });
+                                //If canceled, don't log a record
+                                if(pic_object[i].status=='canceled'){
+                                        //do nothing
+                                }
+                                else {
+                                        //connect to MySQL and insert record
+                                        $.ajax({
+                                                type: 'POST',
+                                                url: 'checkin/submit.php',
+                                                data: {
+                                                        'timestamp' : timestamp,
+                                                        'pic_batchId' : pic_batchId,
+                                                        'pic_UUID' : pic_UUID,
+                                                        'pic_name' : pic_name,
+                                                        'place_google_id' : place_google_id,
+                                                        'place_google_name' : place_google_name,
+                                                        'blurb' : blurb
+                                                }
+                                        }).done( function(){
+                                                console.log('ajax done');
+                                        });
+                                }
+                                
 
                                 //Update pic_ items before incrementing loop
                                 if(i!=pic_object.length-1){

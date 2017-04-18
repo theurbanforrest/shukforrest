@@ -6,6 +6,7 @@
 
         //get data
         $timestamp = $_POST['timestamp'];
+        $pic_batchId = $_POST['pic_batchId'];
         $pic_UUID = $_POST['pic_UUID'];
         $pic_name = $_POST['pic_name'];
         $place_google_id = $_POST['place_google_id'];
@@ -13,14 +14,14 @@
         $blurb = $_POST['blurb'];
         $tags = $_POST['tags'];
 
-        echo "got the data: {$timestamp} , {$pic_UUID} , {$pic_name} , {$place_google_id} , {$place_google_name} , {$blurb}";
+        echo "got the data: {$timestamp} , {$pitch_batchId}} , {$pic_UUID} , {$pic_name} , {$place_google_id} , {$place_google_name} , {$blurb}";
 
         //open connection to mysql db
         $connection = mysqli_connect($servername,$username,$password,$dbname) or die("Error " . mysqli_error($connection));
 
 
         //run SQL query
-        $sql = "insert into {$tbname1} values ('{$timestamp}','{$pic_UUID}','{$pic_name}','{$place_google_id}' , '{$place_google_name}' , '{$blurb}' , '{$tags}' );";
+        $sql = "insert into {$tbname1} values ('{$timestamp}','{$pic_UUID}','{$pic_name}','{$place_google_id}' , '{$place_google_name}' , '{$blurb}' , '{$tags}' , '{$pic_batchId}');";
 
 
         echo $sql;

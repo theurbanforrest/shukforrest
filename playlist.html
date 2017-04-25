@@ -78,29 +78,69 @@
             <div id="fc-feedtiles">
             </div>
 
-        <script id="fc-feedtiles-template" type="text/x-handlebars-template">
-            {{#each events}}
-                <div class="col-xs-12 col-sm-12 fc-bg-1 fc-center-align">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <i class="fa fa-fw fa-map-marker"></i> {{place_google_name}}
-                        </div>
-                        <!--end panel-heading-->
-                        <div class="panel-body">
-                            <img src="{{pic_path}}" style="max-width:100%;max-height:400px">
-                            <br>
-                            {{blurb}}
-                        </div>
-                        <!--end panel-body-->
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Bordered Table</h2>
+                    <div class="table-responsive">
+                        <script id="fc-feedtiles-template" type="text/x-handlebars-template">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Artist</th>
+                                        <th>Song</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each events}}
+                                        <tr>
+                                            <td id="artist-{{id}}">{{artist}}</td>
+                                            <td id="song-{{id}}">{{song}}</td>
+                                            <td>
+                                                <button class="btn btn-primary fc-crud-edit" id="edit-{{id}}"><i class="fa fa-fw fa-pencil"/></button>
+                                                <button class="btn btn-primary fc-crud-delete" id="delete-{{id}}"><i class="fa fa-fw fa-trash"></button>
+                                            </td>
+                                        </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </script>
                     </div>
-                    <!--end panel-->
-                </div>
-                <!--end col-->
-            {{/each}}
-        </script>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
 
         </div>
         <!--main-->
+
+        <!-- Modal 1 -->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <!--Replaced by Google bar-->
+                                        <div class="fc-results"></div>
+                                    </div>
+                                    <!--end panel-heading-->
+                                    <div class="panel-body fc-center-align">
+                                        <canvas id="fc-canvas"></canvas>
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="fc-textarea" placeholder="What's up boo?"></textarea>
+                                        </div>
+                                        <button class="btn btn-primary" id="fc-try-uploader">Post It!</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!--start right_buffer-->
         <div id="right_buffer" class="col-xs-0 col-sm-1 col-md-2 col-lg-2">
@@ -114,6 +154,6 @@
     </footer>
 
     <!--Bootstrapping other JS'-->
-    <script src="getfeed/getfeed.js"></script>
+    <script src="getplaylist/getplaylist.js"></script>
 
 </body>

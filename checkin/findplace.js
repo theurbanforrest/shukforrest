@@ -73,6 +73,6 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIWeXRGZQrrQbp8RFZQZ2W9pF
                         document.getElementById('fc-textarea').value = "";
 
                 console.log('fc-clear-this.click() complete');
-                    window.location.reload();
+                    window.location.reload('index.html');
                     return true;
         });

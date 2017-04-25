@@ -2,7 +2,13 @@
 
         //include configs, set global vars
         include '../php/db/config/mysql-config.php';
-        $tbname1 = 'fineuploader';
+
+        $tbname1 = 'wedding_playlist';
+
+        $oldartist = $_POST['oldartist'];
+        $oldsong = $_POST['oldsong'];
+        $newartist = $_POST['newartist'];
+        $newsong = $_POST['newsong'];
 
 
         //open connection to mysql db
@@ -10,18 +16,11 @@
 
 
         //run SQL query
-        $sql = "select * from fineuploader where pic_name LIKE '%(large)%' ORDER BY timestamp DESC";
+        $sql = "UPDATE {$tbname1} SET 'artist' = '{$newartist}','song' = '{$newsong}' WHERE 'artist' = '{$oldartist}' AND '{$oldsong}' ";
 
         $result = mysqli_query($connection, $sql) or die("Error in Selecting " . mysqli_error($connection));
 
-
-        //turn result into an array
-        $emparray = array();
-        while($row =mysqli_fetch_assoc($result))
-        {
-            $emparray[] = $row;
-        }
-        echo json_encode($emparray);
+        echo "Deleted {$oldartist} - {$oldsong} successfully.  Created {$newartist} - {$newsong}.";
 
 
         //close the db connection

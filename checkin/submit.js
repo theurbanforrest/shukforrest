@@ -41,5 +41,5 @@ var currentPlace;
 //If user clicks out of #portfolioModal1, reload the page and start fresh
 
 	$('#portfolioModal1').on('hidden.bs.modal', function () {
-		window.location.reload();
+		window.location.reload('index.html');
 	});

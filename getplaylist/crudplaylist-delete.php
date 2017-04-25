@@ -2,7 +2,11 @@
 
         //include configs, set global vars
         include '../php/db/config/mysql-config.php';
-        $tbname1 = 'fineuploader';
+
+        $tbname1 = 'wedding_playlist';
+
+        $artist = $_POST['artist'];
+        $song = $_POST['song'];
 
 
         //open connection to mysql db
@@ -10,18 +14,11 @@
 
 
         //run SQL query
-        $sql = "select * from fineuploader where pic_name LIKE '%(large)%' ORDER BY timestamp DESC";
+        $sql = "DELETE FROM {$tbname1} WHERE artist = '{$artist}' AND song = '{$song}' ;";
 
         $result = mysqli_query($connection, $sql) or die("Error in Selecting " . mysqli_error($connection));
 
-
-        //turn result into an array
-        $emparray = array();
-        while($row =mysqli_fetch_assoc($result))
-        {
-            $emparray[] = $row;
-        }
-        echo json_encode($emparray);
+        echo "Removed {$artist} - {$song} successfully."
 
 
         //close the db connection

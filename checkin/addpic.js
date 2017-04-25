@@ -133,7 +133,7 @@ var uploader = new qq.FineUploader({
                         console.log('Data was uploaded successfully');
 
                                 alert('Submission succeeded.');
-                                window.location.reload();       //Reload the page and wipe everything
+                                window.location.reload('index.html');       //Reload the page and wipe everything
 
                         return true;
                 }

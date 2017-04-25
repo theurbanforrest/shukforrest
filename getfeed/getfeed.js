@@ -35,6 +35,13 @@ $(document).ready(function(){
 			feedResponse = JSON.parse(data);
 			console.log(feedResponse);
 
+			//Add pic path to each object
+			for(i=0;i<feedResponse.length;i++){
+				var picpath = picPathBase + feedResponse[i].pic_UUID + '/' + feedResponse[i].pic_name;
+				console.log(picpath);
+				feedResponse[i].pic_path = picpath;
+			}
+			console.log(feedResponse);
 			/*
 			for(i=0;i<feedResponse.length;i++){
 				$('<tr>').append(

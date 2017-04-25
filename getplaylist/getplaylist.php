@@ -2,7 +2,7 @@
 
         //include configs, set global vars
         include '../php/db/config/mysql-config.php';
-        $tbname1 = 'fineuploader';
+        $tbname1 = 'wedding_playlist';
 
 
         //open connection to mysql db
@@ -10,7 +10,7 @@
 
 
         //run SQL query
-        $sql = "select * from fineuploader where pic_name LIKE '%(large)%' ORDER BY timestamp DESC";
+        $sql = "select * from wedding_playlist";
 
         $result = mysqli_query($connection, $sql) or die("Error in Selecting " . mysqli_error($connection));
 
